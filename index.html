@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ایجاد فاکتور آنلاین</title>
+</head>
+<body>
+    <div id="factor-container">
+        <div id="factor-head-container">
+            <div id="factor-head-customerinfo">
+                <div>نام مشتری : <input type="text" name="" id=""></div>
+                <div>تلفن همراه : <input type="text" name="" id=""></div>
+            </div>
+
+            <div id="factor-head-cname">
+                <div id="factor-title">فاکتور فروش</div>
+            </div>
+
+            <div id="factor-head-date">
+                <div>تاریخ : <input type="text" name="" id=""></div>
+                <div>شماره فاکتور : <input type="text" name="" id=""></div>
+            </div>
+        </div>
+        <div id="factor-body">
+            <div id="factor-table">
+                <table style="width:100%">
+                    <tr>
+                      <th>ردیف</th>
+                      <th>نام کالا</th>
+                      <th>تعداد</th>
+                      <th>بهای واحد</th>
+                      <th>مبلغ کل</th>
+                      <th>شرح کالا</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true" onkeyup="calculate_expense(event)"></td>
+                        <td contenteditable="true" onkeyup="calculate_expense(event)"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true" onkeyup="calculate_expense(event)"></td>
+                        <td contenteditable="true" onkeyup="calculate_expense(event)"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+
+                    </tr>
+                  </table> 
+                  <button id="factor-add-row">افزودن ردیف</button>
+            </div>
+            <div id="factor-final">
+                <table style="width:60%">
+                    <tr>
+                        <th>جمع کل فاکتور</th>
+                        <th style="width:70%" id="factor-total"></th>
+                    </tr>
+                    <tr>
+                        <th>مالیات بر ارزش افزوده</th>
+                        <th style="width:70%" id="factor-tax"></th>
+                    </tr>
+                    <tr>
+                        <th> تخفیف (به تومان)</th>
+                        <th contenteditable="true" style="width:70%" id="factor-discount" onkeyup="calculate_discount(event)"></th>
+                    </tr>
+                    <tr>
+                        <th>مبلغ قابل پرداخت</th>
+                        <th style="width:70%" id="factor-final-price"></th>
+                    </tr>
+                    <tr>
+                        <th>مبلغ قابل پرداخت به حروف</th>
+                        <th style="width:70%" id="factor-final-price-in-words"></th>
+                    </tr>
+
+                  </table> 
+            </div>
+            <div id="factor-description">
+                <table style="width:70%">
+                    <tr>
+                        <td style="width: fit-content;">توضیحات</td>
+                        <td contenteditable="true">توضیحات را در این قسمت بنویسید</td>
+                    </tr>
+                </table>
+            </div>
+            <button>چاپ فاکتور</button>
+            <button onclick="create_img()">خروجی تصویر</button>
+            <button onclick="ready_dom()">آماده سازی برای تبدیل</button>
+        </div>
+    </div>
+    <script src="lib/html2canvas.min.js"></script>
+    <script src="lib/numtopersian.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
