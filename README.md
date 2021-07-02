@@ -7,4 +7,4 @@ I know, I should complete the pdf generator ... :(
 
 ## screenshot : 
 
-![]("https://github.com/noob0x/factor-online/raw/main/Screenshot%20from%202021-03-28%2004-14-42.png")
+![](screenshot.jpg)
